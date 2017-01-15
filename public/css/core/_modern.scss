@@ -1,0 +1,68 @@
+@import "../lib/bootstrap-social";
+
+// Background and general
+// -------------------------
+
+
+html, body {
+  background-color: $white;
+}
+
+
+// Footer
+// -------------------------
+
+footer {
+  color: #fff;
+  background-color: $gray-darker;
+
+  a:hover {
+    color: #fff;
+  }
+}
+
+
+// Dropdowns
+// -------------------------
+
+.dropdown-menu > li > a {
+  font-weight: 300;
+}
+
+
+// Form states and alerts
+// -------------------------
+
+.alert {
+  color: $white;
+}
+
+// Navbar
+// -------------------------
+
+.navbar-default {
+  border: 0;
+  background-color: rgba($brand-primary, 0.95);
+  color: $white;
+
+  .navbar-nav {
+    > li > a {
+      transition:none;
+    }
+
+    > .active > a, 
+    > .active > a:hover, 
+    > li > a:hover {
+      color:$white;
+    }
+  }
+
+  .navbard-brand {
+    transition:none;
+  }
+
+  .navbar-brand:hover,
+  .navbar-brand:focus {
+    color:$white;
+  }
+}

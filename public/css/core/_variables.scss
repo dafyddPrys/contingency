@@ -1,25 +1,39 @@
-@import url("http://fonts.googleapis.com/css?family=Montserrat:400,700");
+@import url("https://fonts.googleapis.com/css?family=Cabin:400,700");
+
+
+// Black and white
+// -------------------------
+
+$white: $oc-gray-0;
+$black: $oc-gray-9;
+
 
 // Colors
 // -------------------------
 
-$gray-lighter: #f5f5f5;
-$gray-light: #e0e0e0;
-$gray: #737373;
-$gray-dark: #404040;
-$gray-darker: #121212;
+$gray-lighter: $oc-gray-1;
+$gray-light: $oc-gray-3;
+$gray: $oc-gray-5;
+$gray-dark: $oc-gray-7;
+$gray-darker: $oc-gray-9;
 
-$brand-primary: #2ac5ee;
-$brand-success: #0f9d58;
-$brand-warning: #f4b400;
-$brand-danger: #d80017;
-$brand-info: #5bc0dd;
+$brand-primary: $oc-teal-5;
+$brand-success: $oc-green-5;
+$brand-warning: $oc-orange-5;
+$brand-danger: $oc-red-5;
+$brand-info: $oc-teal-5;
+
+$brand-primary-hover: $oc-teal-7;
+$brand-success-hover: $oc-green-7;
+$brand-warning-hover: $oc-orange-7;
+$brand-danger-hover: $oc-red-7;
+$brand-info-hover: $oc-teal-7;
 
 // Typography
 // -------------------------
 
 $font-size-base: 13px;
-$headings-font-family: 'Montserrat', sans-serif;
+$headings-font-family: 'Cabin', sans-serif;
 $headings-font-weight: 700;
 $text-color: $gray-darker;
 $link-color: $brand-primary;

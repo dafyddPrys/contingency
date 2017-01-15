@@ -1,5 +1,16 @@
-$(document).ready(function() {
+// Vanilla document.onReady
+function ready(fn) {
+  if (document.readyState !== 'loading') {
+    fn();
+  } else {
+    document.addEventListener('DOMContentLoaded', fn);
+  }
+}
 
-  // Place JavaScript code here...
 
-});
+function go() {
+
+}
+
+
+ready(go);

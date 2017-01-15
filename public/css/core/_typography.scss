@@ -1,0 +1,24 @@
+
+// Typography
+// -------------------------
+
+html, body {
+  font-family: 'Cabin', sans-serif;
+}
+
+a {
+  transition: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+ul,
+p {
+  font-size: 14px;
+}
+
+.text-danger {
+  color: $brand-danger;
+}

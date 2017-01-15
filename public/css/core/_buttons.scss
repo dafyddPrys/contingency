@@ -1,0 +1,35 @@
+
+// Buttons
+// -------------------------
+
+.btn {
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 3px;
+  transition:none;
+  background-color: $brand-primary;
+  color: $black;
+
+  &:hover {
+    color: $white;
+    background-color: $brand-primary-hover;
+  }
+}
+
+.btn-social {
+  padding: 10px 50px;
+
+  :first-child {
+    width: 38px;
+    line-height: 38px;
+  }
+}
+
+.btn-link {
+
+  &:hover {
+    color: $gray-darker;
+    text-decoration: none;
+    background-color: transparent;
+  }
+}
