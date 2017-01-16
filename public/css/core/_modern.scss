@@ -25,8 +25,22 @@ footer {
 // Dropdowns
 // -------------------------
 
+.dropdown-menu {
+  border-radius: 0;
+  box-shadow: none;
+  border:none;
+  background-color:rgba($brand-primary, 0.95);
+  padding: 0;
+}
+
 .dropdown-menu > li > a {
   font-weight: 300;
+  padding: 5px 20px;
+}
+
+.dropdown-menu > li > a:hover {
+  background-color: $brand-primary-hover;
+  color: $white;
 }
 
 
@@ -54,6 +68,12 @@ footer {
     > .active > a:hover, 
     > li > a:hover {
       color:$white;
+    }
+
+    .open {
+      > a {
+        color: $white;
+      }
     }
   }
 

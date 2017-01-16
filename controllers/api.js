@@ -1,5 +1,3 @@
-'use strict';
-
 const async = require('async');
 const request = require('request');
 const cheerio = require('cheerio');
@@ -589,21 +587,6 @@ exports.getFileUpload = (req, res) => {
 exports.postFileUpload = (req, res) => {
   req.flash('success', { msg: 'File was uploaded successfully.' });
   res.redirect('/api/upload');
-};
-
-/**
- * GET /api/pinterest
- * Pinterest API example.
- */
-exports.getPinterest = (req, res, next) => {
-  const token = req.user.tokens.find(token => token.kind === 'pinterest');
-  request.get({ url: 'https://api.pinterest.com/v1/me/boards/', qs: { access_token: token.accessToken }, json: true }, (err, request, body) => {
-    if (err) { return next(err); }
-    res.render('api/pinterest', {
-      title: 'Pinterest API',
-      boards: body.data
-    });
-  });
 };
 
 /**
