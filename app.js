@@ -135,7 +135,10 @@ app.post('/account/delete', passportConfig.isAuthenticated, userController.postD
 app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
 
 
-app.get('/new', passportConfig.isAuthenticated , contingencyController.new);
+app.get('/new', passportConfig.isAuthenticated, contingencyController.new);
+app.get('/new/email', passportConfig.isAuthenticated, contingencyController.newEmail);
+app.get('/new/webhook', passportConfig.isAuthenticated, contingencyController.newWebhook);
+
 /**
  * API examples routes.
  */

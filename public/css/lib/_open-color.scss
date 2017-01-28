@@ -183,6 +183,61 @@ $oc-orange-8: map-get($oc-orange-list, "8");
 $oc-orange-9: map-get($oc-orange-list, "9");
 
 
+//  Grape
+//  ───────────────────────────────────
+
+$oc-grape-list: (
+  "0": #f8f0fc,
+  "1": #f3d9fa,
+  "2": #eebefa,
+  "3": #e599f7,
+  "4": #da77f2,
+  "5": #cc5de8,
+  "6": #be4bdb,
+  "7": #ae3ec9,
+  "8": #9c36b5,
+  "9": #862e9c
+);
+
+$oc-grape-0: map-get($oc-grape-list, "0");
+$oc-grape-1: map-get($oc-grape-list, "1");
+$oc-grape-2: map-get($oc-grape-list, "2");
+$oc-grape-3: map-get($oc-grape-list, "3");
+$oc-grape-4: map-get($oc-grape-list, "4");
+$oc-grape-5: map-get($oc-grape-list, "5");
+$oc-grape-6: map-get($oc-grape-list, "6");
+$oc-grape-7: map-get($oc-grape-list, "7");
+$oc-grape-8: map-get($oc-grape-list, "8");
+$oc-grape-9: map-get($oc-grape-list, "9");
+
+
+//  Indigo
+//  ───────────────────────────────────
+
+$oc-indigo-list: (
+  "0": #edf2ff,
+  "1": #dbe4ff,
+  "2": #bac8ff,
+  "3": #91a7ff,
+  "4": #748ffc,
+  "5": #5c7cfa,
+  "6": #4c6ef5,
+  "7": #4263eb,
+  "8": #3b5bdb,
+  "9": #364fc7
+);
+
+$oc-indigo-0: map-get($oc-indigo-list, "0");
+$oc-indigo-1: map-get($oc-indigo-list, "1");
+$oc-indigo-2: map-get($oc-indigo-list, "2");
+$oc-indigo-3: map-get($oc-indigo-list, "3");
+$oc-indigo-4: map-get($oc-indigo-list, "4");
+$oc-indigo-5: map-get($oc-indigo-list, "5");
+$oc-indigo-6: map-get($oc-indigo-list, "6");
+$oc-indigo-7: map-get($oc-indigo-list, "7");
+$oc-indigo-8: map-get($oc-indigo-list, "8");
+$oc-indigo-9: map-get($oc-indigo-list, "9");
+
 //  Color list
 //  ───────────────────────────────────
 
@@ -195,4 +250,6 @@ $oc-color-list: (
   $oc-teal-list:      "teal",
   $oc-green-list:      "green",
   $oc-orange-list:  "orange",
+  $oc-grape-list: "grape",
+  $oc-indigo-list: "indigo"
 );

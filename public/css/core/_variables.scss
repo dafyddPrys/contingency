@@ -22,6 +22,11 @@ $brand-success: $oc-green-5;
 $brand-warning: $oc-orange-5;
 $brand-danger: $oc-red-5;
 $brand-info: $oc-teal-5;
+$brand-dark: darken($oc-indigo-9, 45%);
+
+$brand-primary-text: desaturate($brand-primary, 50%);
+$title-color: mix($brand-primary, $gray, 10%);
+
 
 $brand-primary-hover: $oc-teal-7;
 $brand-success-hover: $oc-green-7;

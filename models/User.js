@@ -2,6 +2,8 @@ const bcrypt = require('bcrypt-nodejs');
 const crypto = require('crypto');
 const mongoose = require('mongoose');
 
+const Schema = mongoose.Schema;
+
 const userSchema = new mongoose.Schema({
   email: { type: String, unique: true },
   password: String,
@@ -12,16 +14,17 @@ const userSchema = new mongoose.Schema({
   twitter: String,
   google: String,
   github: String,
-  instagram: String,
-  linkedin: String,
-  steam: String,
   tokens: Array,
+
+  // Add in objectId ref array
+  contingencies: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Contingency',
+  }],
 
   profile: {
     name: String,
-    gender: String,
     location: String,
-    website: String,
     picture: String
   }
 }, { timestamps: true });

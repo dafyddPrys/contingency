@@ -1,4 +1,13 @@
-extend layout
+extend ../layout
 
 block content
-  
+  .col-sm-12
+    h2 Choose a contingency type to create
+    a.col-sm-offset-3.col-sm-4(href='/new/email')
+     button.btn.btn-primary 
+      i.fa.fa-envelope 
+      | Email
+    a.col-sm-4(href='/new/webhook')
+      button.btn.btn-primary 
+        i.fa.fa-share 
+        | Webhook

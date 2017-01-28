@@ -1,0 +1,28 @@
+extend ../layout
+
+block content
+  h2 Create a new email contingency
+  form.form-horizontal(action='/new', method='POST')
+    input(type='hidden', name='_csrf', value=_csrf)
+    input(type='hidden', name='type', value='email')
+    .form-group
+      label.col-sm-3.control-label(for='email-from') From
+      .col-sm-4
+        input.form-control(type='email', name='email-from', id='email-from')
+    .form-group
+      label.col-sm-3.control-label(for='email-to') To
+      .col-sm-4
+        input.form-control(type='email', name='email-to', id='email-to')
+    .form-group
+      label.col-sm-3.control-label(for='email-subject') Subject
+      .col-sm-7
+        input.form-control(type='text', name='email-subject', id='email-subject')
+    .form-group
+      label.col-sm-3.control-label(for='email-body') Body
+      .col-sm-7
+        textarea.form-control(type='textarea', name='email-body', id='email-body')
+    .form-group
+      .col-sm-offset-3.col-sm-4
+        button.btn.btn.btn-primary(type='submit')
+          i.fa.fa-check
+          | Create contingency
