@@ -37,6 +37,13 @@ const contactController = require('./controllers/contact');
 const contingencyController = require('./controllers/contingency');
 
 /**
+ * Trigger any services
+ */
+
+// Core scheduling service
+const scheduleService = require('./services/schedule');
+
+/**
  * API keys and Passport configuration.
  */
 const passportConfig = require('./config/passport');
