@@ -12,6 +12,14 @@
     border-bottom: 2px solid $brand-primary;
   }
 
+  &.error {
+    border-bottom: 2px solid $brand-danger;
+
+    & + label.error {
+       color: $brand-danger;
+    }
+  }
+
 }
 
 textarea.form-control {

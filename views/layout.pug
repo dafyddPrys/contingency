@@ -20,8 +20,11 @@ html
     include partials/footer
 
     script(src='/js/lib/jquery-2.2.4.min.js')
+    script(src='/dist/jquery.validate.min.js')
     script(src='/js/lib/bootstrap.min.js')
     script(src='/js/main.js')
+
+    block after-script
 
     // Google Analytics: change UA-XXXXX-X to be your site's ID
     script.

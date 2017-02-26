@@ -118,8 +118,9 @@ app.use((req, res, next) => {
   }
   next();
 });
-app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
 
+app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
+app.use(express.static(path.join(__dirname, 'node_modules/jquery-validation'), { maxAge: 31557600000 }));
 /**
  * Primary app routes.
  */
@@ -145,6 +146,7 @@ app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userControl
 app.get('/new', passportConfig.isAuthenticated, contingencyController.new);
 app.get('/new/email', passportConfig.isAuthenticated, contingencyController.newEmail);
 app.get('/new/webhook', passportConfig.isAuthenticated, contingencyController.newWebhook);
+app.post('/new/webhook', passportConfig.isAuthenticated, contingencyController.postNewWebhook);
 
 /**
  * API examples routes.

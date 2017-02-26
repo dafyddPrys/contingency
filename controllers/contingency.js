@@ -3,6 +3,8 @@
  * contingencies.
  */
 
+const nowDate = 
+
 /**
  * Create a new contingency
  */
@@ -15,5 +17,12 @@ exports.newEmail = (req, res) => {
 };
 
 exports.newWebhook = (req, res) => {
-  res.render('contingencies/newWebhook');
+  res.render('contingencies/newWebhook', {
+    nowDate: new Date().toISOString().slice(0, 10),
+  });
+};
+
+exports.postNewWebhook = (req, res) => {
+  // TODO turn post data into new form.
+  res.render('contingencies/confirm');
 };

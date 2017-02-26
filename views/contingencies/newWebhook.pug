@@ -1,21 +1,26 @@
 extend ../layout
 
+ 
+block after-script
+  script(src='/js/modules/webhook-form.js')
+
 block content
   h2 Create a new webhook contingency
-  form.form-horizontal(action='/new', method='POST')
+  form.form-horizontal(action='/new/webhook', method='POST' id='webhook-form')
     input(type='hidden', name='_csrf', value=_csrf)
     input(type='hidden', name='type', value='webhook')
     .form-group
       label.col-sm-3.control-label(for='name') Pick the date and time at which you want your contingency to trigger
       .col-sm-2
-        input.form-control(type='date', name='name', id='name', required)
+        input.form-control(type='date', name='name', id='name' required)
       .col-sm-2
         input.form-control(type='time', name='startTime', id='startTime', required)
     .form-group
       label.col-sm-3.control-label(for='frequency') How frequently do you want the trigger to repeat?
       .col-sm-2
         select.form-control(name='frequency', id='frequency' required)
-          option(value='never' selected) Don't repeat
+          option(value='' select) Select a frequency 
+          option(value='never') Don't repeat
           option(value='day') Every day
           option(value='week') Every week
           option(value='alt-week') Every two weeks
@@ -24,7 +29,7 @@ block content
     .form-group
       label.col-sm-3.control-label(for='destination') Webhook destination (url)
       .col-sm-7
-        input.form-control(type='text', name='destination', id='destination', required)
+        input.form-control(type='url', name='destination', id='destination', required)
     .form-group
       label.col-sm-3.control-label(for='payload') Webhook payload
       .col-sm-7
