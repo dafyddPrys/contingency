@@ -24,9 +24,14 @@
 
 textarea.form-control {
   border:2px solid $gray;
+  min-height: 10rem;
 
   &:focus {
     border:2px solid $brand-primary;
   }
+}
+
+.prettyprint-warning {
+  color: $brand-danger;
 }
 
