@@ -12,9 +12,9 @@ block content
     .form-group
       label.col-sm-3.control-label(for='name') Pick the date and time at which you want your contingency to trigger
       .col-sm-2
-        input.form-control(type='date', name='name', id='name' required)
+        input.form-control(type='date', name='name', id='name', min=`${date.format()}` required)
       .col-sm-2
-        input.form-control(type='time', name='startTime', id='startTime', required)
+        input.form-control(type='time', name='startTime', min=`${time.format()}` id='startTime', required)
     .form-group
       label.col-sm-3.control-label(for='frequency') How frequently do you want the trigger to repeat?
       .col-sm-2

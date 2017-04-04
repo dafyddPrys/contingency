@@ -3,7 +3,7 @@
  * contingencies.
  */
 
-const nowDate = 
+const moment = require('moment');
 
 /**
  * Create a new contingency
@@ -18,7 +18,8 @@ exports.newEmail = (req, res) => {
 
 exports.newWebhook = (req, res) => {
   res.render('contingencies/newWebhook', {
-    nowDate: new Date().toISOString().slice(0, 10),
+    date: moment({ hours: 0, minutes: 0, seconds: 0, milliseconds: 0 }),
+    time: moment(),
   });
 };
 
