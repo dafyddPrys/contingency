@@ -45,7 +45,7 @@ const contingencySchema = new mongoose.Schema({
   },
   frequency: { // the number of milliseconds in the frequency.
     type: String,
-    enum: ['day', 'week', 'alt-week', 'month', 'year'],
+    enum: ['never', 'day', 'week', 'alt-week', 'month', 'year'],
     required: true
   },
   fromTime: {

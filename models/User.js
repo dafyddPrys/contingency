@@ -68,6 +68,17 @@ userSchema.methods.gravatar = function gravatar(size) {
   return `https://gravatar.com/avatar/${md5}?s=${size}&d=retro`;
 };
 
+
+/**
+ * Add a contingency ID to the user's array of IDs
+ */
+userSchema.methods.addContingency = function addContingency(contingencyId) {
+  if (this.contingencies.findIndex(v => v === contingencyId) < 0) {
+    this.contingencies.push(contingencyId);
+  }
+  return this.save();
+};
+
 const User = mongoose.model('User', userSchema);
 
 module.exports = User;

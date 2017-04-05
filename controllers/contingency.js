@@ -18,18 +18,14 @@ exports.newEmail = (req, res) => {
 };
 
 exports.newWebhook = (req, res) => {
+  console.log(req.user);
   res.render('contingencies/newWebhook', {
     date: moment({ hours: 0, minutes: 0, seconds: 0, milliseconds: 0 }),
   });
 };
 
 exports.handleNewWebhook = (req, res) => {
-  // TODO turn post data into new form.
-  console.log('Got new webhook request');
-  console.log(req.body);
-
   req.body.fromTime = moment(req.body.date);
-
   Contingency
     .create(req.body, (err, contingency) => {
       console.log('saved');
@@ -41,7 +37,13 @@ exports.handleNewWebhook = (req, res) => {
         return;
       }
 
+      // Save the contingency to the user's list
+      req.user.addContingency(contingency.id)
+        .then(
+          contingency => res.render('contingencies/confirm', contingency),
+          () => res.render('contingencies/newWebhook')
+        );
+
       // res.redirect(302, 'contingencies/confirm');
-      res.render('contingencies/confirm', contingency);
     });
 };
