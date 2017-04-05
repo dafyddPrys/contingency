@@ -1,6 +1,7 @@
 
 const mongoose = require('mongoose');
 const moment = require('moment');
+const validateJSON = require('jsonschema').validate;
 
 /**
  * Schema definition
@@ -53,7 +54,7 @@ const contingencySchema = new mongoose.Schema({
   },
   nextTriggerTime: {
     type: Date,
-    required: true,
+    required: false,
   },
   webhookUrl: {
     type: String,
@@ -65,7 +66,11 @@ const contingencySchema = new mongoose.Schema({
   },
   webhookBody: {
     type: {},
-    required: true
+    required: false,
+    validate: {
+      validator: v => validateJSON(4, v),
+      message: 'webhook body JSON is not valid!'
+    }
   }
 
 });
@@ -156,7 +161,6 @@ contingencySchema.statics.findTriggersForTime = function findTriggersForTime(tim
     })
     .exec();
 };
-
 
 /**
  * Create and export model

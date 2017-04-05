@@ -142,11 +142,10 @@ app.post('/account/password', passportConfig.isAuthenticated, userController.pos
 app.post('/account/delete', passportConfig.isAuthenticated, userController.postDeleteAccount);
 app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
 
-
-app.get('/new', passportConfig.isAuthenticated, contingencyController.new);
+app.get('/webhook/new', passportConfig.isAuthenticated, contingencyController.newWebhook);
+app.post('/webhook/new', passportConfig.isAuthenticated, contingencyController.handleNewWebhook);
+app.get('/new', passportConfig.isAuthenticated, contingencyController.newWebhook);
 app.get('/new/email', passportConfig.isAuthenticated, contingencyController.newEmail);
-app.get('/new/webhook', passportConfig.isAuthenticated, contingencyController.newWebhook);
-app.post('/new/webhook', passportConfig.isAuthenticated, contingencyController.postNewWebhook);
 
 /**
  * API examples routes.

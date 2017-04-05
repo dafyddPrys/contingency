@@ -32,6 +32,7 @@
     "github": "^7.2.0",
     "instagram-node": "^0.5.8",
     "jquery-validation": "^1.16.0",
+    "jsonschema": "^1.1.1",
     "lastfm": "^0.9.2",
     "lob": "^3.9.0",
     "lodash": "^4.16.6",

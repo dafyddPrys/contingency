@@ -6,7 +6,7 @@ block after-script
 
 block content
   h2 Create a new webhook contingency
-  form.form-horizontal(action='/new/webhook', method='POST' id='webhook-form')
+  form.form-horizontal(action='/webhook/new', method='POST' id='webhook-form')
     input(type='hidden', name='_csrf', value=_csrf)
     input(type='hidden', name='type', value='webhook')
     .form-group
@@ -14,7 +14,7 @@ block content
       .col-sm-2
         input.form-control(type='date', name='name', id='name' min=`${date.format()}`, required)
       .col-sm-2
-        input.form-control(type='time', name='startTime', min=`${time.format()}` id='startTime', required)
+        input.form-control(type='time', name='startTime', id='startTime', required)
     .form-group
       label.col-sm-3.control-label(for='frequency') How frequently do you want the trigger to repeat?
       .col-sm-2
@@ -27,13 +27,13 @@ block content
           option(value='month') Every month
           option(value='year') Every year
     .form-group
-      label.col-sm-3.control-label(for='destination') Webhook destination (url)
+      label.col-sm-3.control-label(for='webhookUrl') Webhook destination (url)
       .col-sm-7
-        input.form-control(type='url', name='destination', id='destination', required)
+        input.form-control(type='url', name='webhookUrl', id='destination', required)
     .form-group
-      label.col-sm-3.control-label(for='payload') Webhook payload
+      label.col-sm-3.control-label(for='payload') Webhook payload (JSON)
       .col-sm-7
-        textarea.form-control(type='text', name='payload', id='payload', onblur='prettyPrint()')
+        textarea.form-control(type='text', name='payload', id='payload', onblur='prettyPrint()', placeholder='{ "example": 2 }')
       .col-sm-7
         p.prettyprint-warning(id='prettyprint-warning')
     .form-group
