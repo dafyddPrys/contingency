@@ -79,6 +79,17 @@ userSchema.methods.addContingency = function addContingency(contingencyId) {
   return this.save();
 };
 
+/**
+ * Make sure the doc's contingencies are populated. Returns the
+ * Entire document.
+ */
+userSchema.methods.populateContingencies = function getContingencies() {
+  if (this.populated('contingencies')) {
+    return this.exec();
+  }
+  return this.populate('contingencies').execPopulate();
+};
+
 const User = mongoose.model('User', userSchema);
 
 module.exports = User;

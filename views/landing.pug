@@ -1,13 +1,20 @@
 extend layout
 
 block content
-  .col-sm-12
 
-    h2 Your contingencies
-    each contingency in user.contingencies
-      p some
-    if (user.contingencies.length === 0)
-      p You don't have any contingencies set up yet.
-      a(href="/webhook/new") 
-        i.fa.fa-plus
-        span Add a contingency
+  h2 Your contingencies
+  each contingency in user.contingencies
+    .container.contingency-summary
+      .row
+        .col-sm-2 URL:
+        .col-sm-9 #{contingency.webhookUrl}
+      .row
+        .col-sm-2 Frequency:
+        .col-sm-9 #{contingency.frequency}
+
+  if (user.contingencies.length === 0)
+    p You don't have any contingencies set up yet.
+  .row
+    a.col-sm-12(href="/webhook/new") 
+      i.fa.fa-plus
+      span Add a contingency

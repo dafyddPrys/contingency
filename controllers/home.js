@@ -7,8 +7,13 @@ const passportConfig = require('../config/passport');
 exports.index = (req, res) => {
   const isAuthed = passportConfig.isAuthenticatedBool(req);
   if (isAuthed) {
-    res.render('landing', {
-    });
+    res.locals.user.populateContingencies().then(
+      () => {
+        console.log(res.locals.user);
+        res.render('landing', {});
+      },
+      error => console.error(error)
+    );
   } else {
     res.render('home', {
       title: 'Home',
