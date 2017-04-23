@@ -20,3 +20,24 @@ exports.index = (req, res) => {
     });
   }
 };
+
+/**
+ * POST /
+ * will be a delete of a contingency
+ */
+exports.handleDelete = (req, res) => {
+  if (req.body && req.body.id) {
+    // Check id belongs to user and delete
+    res.locals.user.removeContingency(req.body.id)
+      .then(
+        () => {
+          res.redirect(req.get('referer'));
+        },
+        (error) => {
+          console.error(`Error with remove contingency: ${error}`);
+          // TODO flash error message
+          res.redirect(req.get('referer'));
+        }
+      );
+  }
+};

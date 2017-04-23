@@ -126,6 +126,7 @@ app.use(express.static(path.join(__dirname, 'node_modules/jquery-validation'), {
  * Primary app routes.
  */
 app.get('/', homeController.index);
+app.post('/', passportConfig.isAuthenticated, homeController.handleDelete);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);

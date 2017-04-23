@@ -1,8 +1,10 @@
 const bcrypt = require('bcrypt-nodejs');
 const crypto = require('crypto');
 const mongoose = require('mongoose');
+const Contingency = require('./Contingency.js');
 
 const Schema = mongoose.Schema;
+
 
 const userSchema = new mongoose.Schema({
   email: { type: String, unique: true },
@@ -88,6 +90,23 @@ userSchema.methods.populateContingencies = function getContingencies() {
     return this.exec();
   }
   return this.populate('contingencies').execPopulate();
+};
+
+/**
+ * Delete a contingency. Couple this method here because we want to check
+ * it belongs to this user before deleting.
+ */
+userSchema.methods.removeContingency = function removeContingency(id) {
+  let ownsContingency = false;
+  if (this.populated('contingencies')) {
+    ownsContingency = this.contingencies.findIndex(c => c.id.toString() === id) > -1;
+  } else {
+    ownsContingency = this.contingencies.findIndex(c => c.toString() === id) > -1;
+  }
+  if (ownsContingency) {
+    return Contingency.remove(id).exec();
+  }
+  return Promise.reject('You dont own that contingency');
 };
 
 const User = mongoose.model('User', userSchema);
